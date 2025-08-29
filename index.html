@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Odontograma - Clínica Dental</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            padding: 20px;
+        }
+
+        .container {
+            display: flex;
+            max-width: 1200px;
+            margin: 0 auto;
+            gap: 20px;
+        }
+
+        /* Panel izquierdo: odontograma */
+        .odontograma-panel {
+            flex: 3;
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .odontograma-titulo {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #2c3e50;
+            font-size: 1.5rem;
+        }
+
+        .fila {
+            display: flex;
+            justify-content: center;
+            margin: 10px 0;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .diente {
+            width: 40px;
+            height: 60px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            background-color: white;
+            transition: all 0.2s ease;
+            user-select: none;
+            position: relative;
+            font-size: 12px;
+            color: #333;
+        }
+
+        .diente:hover {
+            background-color: #f0f8ff;
+            transform: scale(1.05);
+        }
+
+        .diente.selected {
+            background-color: #4CAF50; /* Verde = empaste */
+            color: white;
+        }
+
+        .diente.caries {
+            background-color: #F44336; /* Rojo = caries */
+            color: white;
+        }
+
+        .diente.implante {
+            background-color: #2196F3; /* Azul = implante */
+            color: white;
+        }
+
+        /* Panel derecho: menú de tratamientos */
+        .menu-panel {
+            flex: 1;
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .menu-titulo {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+
+        .tratamiento {
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            cursor: pointer;
+        }
+
+        .tratamiento:hover {
+            background-color: #f0f8ff;
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            background: #2c3e50;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+
+        .paciente-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #e0e0e0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Panel del odontograma -->
+        <div class="odontograma-panel">
+            <h2 class="odontograma-titulo">Odontograma</h2>
+            <div class="fila">
+                <!-- Dientes superiores -->
+                <div class="diente" onclick="clicDiente(this, 'empaste')">18</div>
+                <div class="diente" onclick="clicDiente(this, 'empaste')">17</div>
+                <div class="diente" onclick="clicDiente(this, 'empaste')">16</div>
+                <div class="diente" onclick="clicDiente(this, 'empaste')">15</div>
+                <div class="diente" onclick="clicDiente(this, 'empaste')">14</div>
+                <div class="diente" onclick="clicDiente(this, 'empaste')">13</div>
+                <div class="diente" onclick="clicDiente(this, 'empaste')">12</div>
+                <div class="diente" onclick="clicDiente(this, 'empaste')">11</div>
+                <div class="diente" onclick="clicDiente(this, 'empaste')">21</div>
+                <div class="diente" onclick="clicDiente(this, 'empaste')">22</div>
+                <div class="diente" onclick="clicDiente(this, 'empaste')">23</div>
+                <div class="diente" onclick="clicDiente(this, 'empaste')">24</div>
+                <div class="diente" onclick="clicDiente(this, 'empaste')">25</div>
+                <div class="diente" onclick="clicDiente(this, 'empaste')">26</div>
+                <div class="diente" onclick="clicDiente(this, 'empaste')">27</div>
+                <div class="diente" onclick="clicDiente(this, 'empaste')">28</div>
+            </div>
+
+            <div class="fila">
+                <!-- Dientes inferiores -->
+                <div class="diente" onclick="clicDiente(this, 'empaste')">48</div>
+                <div class="diente" onclick="clicDiente(this, 'empaste')">47</div>
+                <div class="diente" onclick="clicDiente(this, 'empaste')">46</div>
+                <div class="diente" onclick="clicDiente(this, 'empaste')">45</div>
+                <div class="diente" onclick="clicDiente(this, 'empaste')">44</div>
+                <div class="diente" onclick="clicDiente(this, 'empaste')">43</div>
+                <div class="diente" onclick="clicDiente(this, 'empaste')">42</div>
+                <div class="diente" onclick="clicDiente(this, 'empaste')">41</div>
+                <div class="diente" onclick="clicDiente(this, 'empaste')">31</div>
+                <div class="diente" onclick="clicDiente(this, 'empaste')">32</div>
+                <div class="diente" onclick="clicDiente(this, 'empaste')">33</div>
+                <div class="diente" onclick="clicDiente(this, 'empaste')">34</div>
+                <div class="diente" onclick="clicDiente(this, 'empaste')">35</div>
+                <div class="diente" onclick="clicDiente(this, 'empaste')">36</div>
+                <div class="diente" onclick="clicDiente(this, 'empaste')">37</div>
+                <div class="diente" onclick="clicDiente(this, 'empaste')">38</div>
+            </div>
+        </div>
+
+        <!-- Panel del menú de tratamientos -->
+        <div class="menu-panel">
+            <h3 class="menu-titulo">Tratamientos</h3>
+            <div class="tratamiento" onclick="aplicarTratamiento('empaste')">
+                <span>Empaste</span>
+                <span>150€</span>
+            </div>
+            <div class="tratamiento" onclick="aplicarTratamiento('caries')">
+                <span>Caries</span>
+                <span>200€</span>
+            </div>
+            <div class="tratamiento" onclick="aplicarTratamiento('implante')">
+                <span>Implante</span>
+                <span>700€</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="paciente-info">
+            <div class="avatar">P</div>
+            <div>Paciente 706598 (65 años)</div>
+        </div>
+        <div>Saldo: 45,00€</div>
+    </div>
+
+    <script>
+        function clicDiente(diente, tipo) {
+            // Remueve todos los estados anteriores
+            diente.classList.remove('selected', 'caries', 'implante');
+            // Aplica el nuevo estado
+            diente.classList.add(tipo);
+        }
+
+        function aplicarTratamiento(tipo) {
+            alert("Aplicando tratamiento: " + tipo);
+            // Aquí podrías cambiar el color de todos los dientes seleccionados
+        }
+    </script>
+
+</body>
+</html>
