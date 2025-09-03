@@ -13,9 +13,10 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 50%, #e8f5e8 100%);
             min-height: 100vh;
             padding: 15px;
+            color: #424242;
         }
 
         .container {
@@ -23,31 +24,34 @@
             margin: 0 auto;
             background: white;
             border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
             overflow: hidden;
+            border: 1px solid #e0e0e0;
         }
 
         .header {
-            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-            color: white;
+            background: linear-gradient(135deg, #a5d8ff 0%, #b5e4ca 100%);
+            color: #212121;
             padding: 25px;
             text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
         }
 
         .header h1 {
             font-size: 2.8em;
             margin-bottom: 10px;
             font-weight: 300;
+            text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
         }
 
         .controles {
             padding: 20px;
-            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            background: #f8f9fa;
             display: flex;
             gap: 12px;
             justify-content: center;
             flex-wrap: wrap;
-            border-bottom: 3px solid #dee2e6;
+            border-bottom: 1px solid #e0e0e0;
         }
 
         .boton-tratamiento {
@@ -58,7 +62,7 @@
             font-weight: 600;
             color: white;
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
             font-size: 14px;
             position: relative;
             overflow: hidden;
@@ -71,8 +75,8 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-            transition: left 0.5s;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: left 0.6s;
         }
 
         .boton-tratamiento:hover::before {
@@ -80,33 +84,34 @@
         }
 
         .boton-tratamiento:hover {
-            transform: translateY(-4px) scale(1.05);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+            transform: translateY(-3px) scale(1.03);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
         }
 
         .boton-tratamiento.activo {
-            transform: scale(1.1) translateY(-3px);
-            box-shadow: 0 12px 35px rgba(0,0,0,0.35);
+            transform: scale(1.08) translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
             animation: pulse 2s infinite;
         }
 
         @keyframes pulse {
-            0% { box-shadow: 0 12px 35px rgba(0,0,0,0.35); }
-            50% { box-shadow: 0 12px 35px rgba(0,0,0,0.5); }
-            100% { box-shadow: 0 12px 35px rgba(0,0,0,0.35); }
+            0% { box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+            50% { box-shadow: 0 10px 30px rgba(0,0,0,0.25); }
+            100% { box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
         }
 
-        .caries { background: linear-gradient(135deg, #ff6b6b, #ee5a52); }
-        .obturacion { background: linear-gradient(135deg, #51cf66, #40c057); }
-        .corona { background: linear-gradient(135deg, #ffd43b, #fab005); }
-        .endodoncia { background: linear-gradient(135deg, #da77f2, #cc5de8); }
-        .implante { background: linear-gradient(135deg, #495057, #343a40); }
-        .extraccion { background: linear-gradient(135deg, #f03e3e, #c92a2a); }
-        .limpiar { background: linear-gradient(135deg, #868e96, #6c757d); }
+        /* Colores pastel para tratamientos */
+        .caries { background: linear-gradient(135deg, #f48fb1, #ec407a); }
+        .obturacion { background: linear-gradient(135deg, #81c784, #4caf50); }
+        .corona { background: linear-gradient(135deg, #ffb74d, #ffa726); }
+        .endodoncia { background: linear-gradient(135deg, #9575cd, #7e57c2); }
+        .implante { background: linear-gradient(135deg, #b0bec5, #78909c); }
+        .extraccion { background: linear-gradient(135deg, #ef9a9a, #e57373); }
+        .limpiar { background: linear-gradient(135deg, #cfd8dc, #90a4ae); }
 
         .odontograma-container {
             padding: 40px;
-            background: white;
+            background: #fafafa;
         }
 
         .odontograma {
@@ -149,64 +154,47 @@
 
         .numero-diente {
             font-weight: bold;
-            color: #495057;
+            color: #5d6d7e;
             font-size: 13px;
-            background: linear-gradient(135deg, #e9ecef, #f8f9fa);
+            background: linear-gradient(135deg, #d4e6f1, #f0f5f9);
             padding: 6px 10px;
             border-radius: 15px;
             min-width: 28px;
             text-align: center;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-            border: 2px solid #dee2e6;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            border: 1px solid #bdc3c7;
         }
 
         .diente {
             cursor: pointer;
-            filter: drop-shadow(3px 3px 8px rgba(0,0,0,0.15));
+            filter: drop-shadow(2px 2px 6px rgba(0,0,0,0.1));
             transition: all 0.3s ease;
             position: relative;
         }
 
         .diente:hover {
-            filter: drop-shadow(5px 5px 15px rgba(0,0,0,0.25));
+            filter: drop-shadow(4px 4px 12px rgba(0,0,0,0.15));
         }
 
-        /* Estilos para cada superficie del diente */
-        .superficie-oclusal { 
-            transition: all 0.3s ease; 
-            stroke: #2c3e50; 
-            stroke-width: 1.2; 
-        }
-        .superficie-vestibular { 
-            transition: all 0.3s ease; 
-            stroke: #2c3e50; 
-            stroke-width: 1.2; 
-        }
-        .superficie-lingual { 
-            transition: all 0.3s ease; 
-            stroke: #2c3e50; 
-            stroke-width: 1.2; 
-        }
-        .superficie-mesial { 
-            transition: all 0.3s ease; 
-            stroke: #2c3e50; 
-            stroke-width: 1.2; 
-        }
-        .superficie-distal { 
-            transition: all 0.3s ease; 
-            stroke: #2c3e50; 
-            stroke-width: 1.2; 
-        }
-        .raiz-dental { 
-            transition: all 0.3s ease; 
-            stroke: #2c3e50; 
-            stroke-width: 1.2; 
+        /* Superficies del diente */
+        .superficie-oclusal, 
+        .superficie-vestibular, 
+        .superficie-lingual, 
+        .superficie-mesial, 
+        .superficie-distal, 
+        .raiz-dental {
+            transition: all 0.3s ease;
+            stroke: #566573;
+            stroke-width: 1.1;
         }
 
-        .superficie-oclusal:hover, .superficie-vestibular:hover, 
-        .superficie-lingual:hover, .superficie-mesial:hover, 
-        .superficie-distal:hover, .raiz-dental:hover {
-            stroke-width: 2.5;
+        .superficie-oclusal:hover, 
+        .superficie-vestibular:hover, 
+        .superficie-lingual:hover, 
+        .superficie-mesial:hover, 
+        .superficie-distal:hover, 
+        .raiz-dental:hover {
+            stroke-width: 2.2;
             stroke: #3498db;
             filter: brightness(1.1);
         }
@@ -214,10 +202,11 @@
         .info-panel {
             margin-top: 30px;
             padding: 25px;
-            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            background: linear-gradient(135deg, #fffde7, #f3e5f5);
             border-radius: 20px;
             text-align: center;
-            border: 1px solid #dee2e6;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
         }
 
         .diente-seleccionado {
@@ -246,15 +235,15 @@
             padding: 15px 20px;
             background: white;
             border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
             min-width: 90px;
-            border: 2px solid #e9ecef;
+            border: 1px solid #e0e0e0;
             transition: transform 0.3s ease;
         }
 
         .stat-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
         }
 
         .stat-number {
@@ -265,7 +254,7 @@
 
         .stat-label {
             font-size: 11px;
-            color: #6c757d;
+            color: #7f8c8d;
             text-transform: uppercase;
             font-weight: 600;
             margin-top: 5px;
@@ -299,30 +288,30 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>🦷 Odontograma </h1>
+            <h1>🦷 Odontograma Clínico</h1>
         </div>
 
         <div class="controles">
             <button class="boton-tratamiento caries" data-tratamiento="caries">
-                🔴 Caries
+                🩸 Caries
             </button>
             <button class="boton-tratamiento obturacion" data-tratamiento="obturacion">
-                🟢 Obturación
+                🛠️ Obturación
             </button>
             <button class="boton-tratamiento corona" data-tratamiento="corona">
-                🟡 Corona
+                👑 Corona
             </button>
             <button class="boton-tratamiento endodoncia" data-tratamiento="endodoncia">
-                🟣 Endodoncia
+                🧠 Endodoncia
             </button>
             <button class="boton-tratamiento implante" data-tratamiento="implante">
-                ⚫ Implante
+                ⚙️ Implante
             </button>
             <button class="boton-tratamiento extraccion" data-tratamiento="extraccion">
-                🔴 Extracción
+                ❌ Extracción
             </button>
             <button class="boton-tratamiento limpiar" data-tratamiento="limpiar">
-                🧹 Limpiar
+                🧼 Limpiar
             </button>
         </div>
 
@@ -334,7 +323,7 @@
 
             <div class="info-panel">
                 <div class="diente-seleccionado" id="info-diente">
-                    Sistema de diagnóstico dental avanzado activado ✨
+                    Sistema de diagnóstico dental activado ✨
                 </div>
                 <div class="tratamientos-aplicados" id="info-tratamientos">
                     Selecciona un tratamiento y haz clic en la superficie específica del diente
@@ -376,12 +365,12 @@
                 this.tratamientoActivo = null;
                 this.estadoDientes = {};
                 this.coloresTratamientos = {
-                    'caries': '#ff6b6b',
-                    'obturacion': '#51cf66',
-                    'corona': '#ffd43b',
-                    'endodoncia': '#da77f2',
-                    'implante': '#495057',
-                    'extraccion': '#f03e3e',
+                    'caries': '#f48fb1',         // Rosa pastel
+                    'obturacion': '#81c784',     // Verde menta
+                    'corona': '#ffb74d',         // Naranja suave
+                    'endodoncia': '#9575cd',     // Lavanda
+                    'implante': '#b0bec5',       // Gris azulado pastel
+                    'extraccion': '#ef9a9a',     // Rojo claro
                     'limpiar': '#ffffff'
                 };
                 
@@ -403,7 +392,6 @@
                         superficie_distal: 'M33,43 L30,40 L30,25 C33,22 33,18 30,15 L30,12 L33,15 C36,18 36,25 33,43 Z',
                         raiz: 'M18,45 L27,45 L25,75 C25,78 24,80 22.5,80 C21,80 20,78 20,75 Z'
                     },
-
                     incisivo_lateral: {
                         corona_vestibular: 'M16,28 C14,25 14,22 16,19 L29,19 C31,22 31,25 29,28 L29,42 C29,44 27,46 25,46 L20,46 C18,46 16,44 16,42 Z',
                         corona_lingual: 'M16,42 C16,44 18,46 20,46 L25,46 C27,46 29,44 29,42 L31,45 L31,51 C31,53 29,55 26,55 L19,55 C16,55 14,53 14,51 L14,45 Z',
@@ -412,7 +400,6 @@
                         superficie_distal: 'M31,45 L29,42 L29,28 C31,25 31,22 29,19 L29,17 L31,20 C33,23 33,28 31,45 Z',
                         raiz: 'M19,46 L26,46 L24,76 C24,78 23,79 22.5,79 C22,79 21,78 21,76 Z'
                     },
-
                     canino: {
                         corona_vestibular: 'M17,30 C15,27 15,23 17,18 L28,18 C30,23 30,27 28,30 L28,44 C28,46 26,48 24,48 L21,48 C19,48 17,46 17,44 Z',
                         corona_lingual: 'M17,44 C17,46 19,48 21,48 L24,48 C26,48 28,46 28,44 L30,47 L30,53 C30,55 28,57 25,57 L20,57 C17,57 15,55 15,53 L15,47 Z',
@@ -421,7 +408,6 @@
                         superficie_distal: 'M30,47 L28,44 L28,30 C30,27 30,23 28,18 L28,15 L30,20 C32,25 32,32 30,47 Z',
                         raiz: 'M19,48 L26,48 L25,82 C25,84 24,85 22.5,85 C21,85 20,84 20,82 Z'
                     },
-
                     premolar: {
                         corona_vestibular: 'M14,32 C12,29 12,25 14,22 L31,22 C33,25 33,29 31,32 L31,46 C31,48 29,50 27,50 L18,50 C16,50 14,48 14,46 Z',
                         corona_lingual: 'M14,46 C14,48 16,50 18,50 L27,50 C29,50 31,48 31,46 L33,49 L33,55 C33,57 31,59 28,59 L17,59 C14,59 12,57 12,55 L12,49 Z',
@@ -430,7 +416,6 @@
                         superficie_distal: 'M33,49 L31,46 L31,32 C33,29 33,25 31,22 L31,19 L33,24 C35,29 35,37 33,49 Z',
                         raiz: 'M16,50 L29,50 L27,78 C27,80 26,81 22.5,81 C19,81 18,80 18,78 Z'
                     },
-
                     molar: {
                         corona_vestibular: 'M10,35 C8,32 8,28 10,25 L35,25 C37,28 37,32 35,35 L35,49 C35,51 33,53 31,53 L14,53 C12,53 10,51 10,49 Z',
                         corona_lingual: 'M10,49 C10,51 12,53 14,53 L31,53 C33,53 35,51 35,49 L37,52 L37,58 C37,60 35,62 32,62 L13,62 C10,62 8,60 8,58 L8,52 Z',
@@ -443,6 +428,7 @@
                 };
             }
 
+            // ... (el resto del script permanece igual, no se modifica)
             inicializar() {
                 this.crearDientes();
                 this.configurarEventos();
@@ -516,7 +502,6 @@
                     this.crearSuperficie(svg, paths.superficie_distal, 'superficie-distal', 'distal', numero, '#fafafa');
                 }
 
-                // Raíces
                 if (tipoDiente === 'molar' && paths.raiz_mesial && paths.raiz_distal) {
                     this.crearSuperficie(svg, paths.raiz_mesial, 'raiz-dental', 'raiz_mesial', numero, '#f0f0f0');
                     this.crearSuperficie(svg, paths.raiz_distal, 'raiz-dental', 'raiz_distal', numero, '#f0f0f0');
@@ -544,7 +529,6 @@
             }
 
             configurarEventos() {
-                // configuracion botones de tratamiento
                 const botones = document.querySelectorAll('.boton-tratamiento');
                 botones.forEach(boton => {
                     boton.addEventListener('click', () => {
@@ -578,11 +562,9 @@
                 }
 
                 if (this.tratamientoActivo === 'limpiar') {
-                    // Limpiar tratamiento de la superficie
                     delete this.estadoDientes[numero][superficie];
                     elemento.setAttribute('fill', this.obtenerColorOriginal(superficie));
                 } else {
-                    // Aplicar tratamiento
                     this.estadoDientes[numero][superficie] = this.tratamientoActivo;
                     elemento.setAttribute('fill', this.coloresTratamientos[this.tratamientoActivo]);
                 }
@@ -692,7 +674,6 @@
                     });
                 });
 
-                // Actualizar contadores en la interfaz
                 document.getElementById('stat-caries').textContent = stats.caries;
                 document.getElementById('stat-obturaciones').textContent = stats.obturacion;
                 document.getElementById('stat-coronas').textContent = stats.corona;
@@ -749,7 +730,6 @@
                 this.actualizarInfoPanel(null, null, 'Odontograma limpiado completamente');
             }
 
-            // Método para obtener reporte detallado
             generarReporte() {
                 const reporte = {
                     fecha: new Date().toLocaleString(),
@@ -788,10 +768,7 @@
 
         document.addEventListener('DOMContentLoaded', () => {
             const odontograma = new OdontogramaUltraRealista();
-            
             window.odontograma = odontograma;
-            
-            
         });
 
         function descargarDatos() {
@@ -807,7 +784,6 @@
             URL.revokeObjectURL(url);
         }
 
-        // Función para cargar datos desde archivo
         function cargarDatos() {
             const input = document.createElement('input');
             input.type = 'file';
@@ -825,7 +801,6 @@
             input.click();
         }
 
-        // Función para imprimir reporte
         function imprimirReporte() {
             const reporte = window.odontograma.generarReporte();
             const ventana = window.open('', '_blank');
@@ -834,12 +809,12 @@
                 <head>
                     <title>Reporte Odontograma</title>
                     <style>
-                        body { font-family: Arial, sans-serif; margin: 20px; }
-                        h1, h2 { color: #2c3e50; }
+                        body { font-family: Arial, sans-serif; margin: 20px; background: #fcfcfc; }
+                        h1, h2 { color: #424242; }
                         table { border-collapse: collapse; width: 100%; margin: 20px 0; }
-                        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
-                        th { background-color: #f2f2f2; }
-                        .resumen { background-color: #f8f9fa; padding: 15px; border-radius: 5px; }
+                        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+                        th { background-color: #f0f0f0; }
+                        .resumen { background-color: #f8f9fa; padding: 15px; border-radius: 8px; }
                     </style>
                 </head>
                 <body>
@@ -878,26 +853,13 @@
             ventana.print();
         }
 
-        // Agregar atajos de teclado
         document.addEventListener('keydown', (e) => {
             if (e.ctrlKey) {
                 switch(e.key) {
-                    case 's':
-                        e.preventDefault();
-                        descargarDatos();
-                        break;
-                    case 'o':
-                        e.preventDefault();
-                        cargarDatos();
-                        break;
-                    case 'p':
-                        e.preventDefault();
-                        imprimirReporte();
-                        break;
-                    case 'r':
-                        e.preventDefault();
-                        window.odontograma.limpiarTodo();
-                        break;
+                    case 's': e.preventDefault(); descargarDatos(); break;
+                    case 'o': e.preventDefault(); cargarDatos(); break;
+                    case 'p': e.preventDefault(); imprimirReporte(); break;
+                    case 'r': e.preventDefault(); window.odontograma.limpiarTodo(); break;
                 }
             }
         });
