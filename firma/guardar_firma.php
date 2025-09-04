@@ -1,12 +1,10 @@
 <?php
-// guardar_firma.php
 
 header('Content-Type: application/json');
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: POST');
 header('Access-Control-Allow-Headers: Content-Type');
 
-// Recibir datos
 $data = json_decode(file_get_contents('php://input'), true);
 
 if (!isset($data['firma']) || empty($data['firma'])) {
@@ -16,15 +14,14 @@ if (!isset($data['firma']) || empty($data['firma'])) {
 
 $firmaBase64 = $data['firma'];
 
-// Quitar el encabezado "data:image/png;base64,"
 $firmaBase64 = str_replace('data:image/png;base64,', '', $firmaBase64);
 $firmaBinaria = base64_decode($firmaBase64);
 
 // Conexión a la base de datos
 $host = 'localhost';
-$db   = 'firmas_db';      // Nombre de tu base de datos
-$user = 'root';           // Usuario (normalmente root en XAMPP)
-$pass = '';               // Contraseña (vacía en XAMPP por defecto)
+$db   = 'firmas_db';      
+$user = 'root';           
+$pass = '';             
 
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$db;charset=utf8", $user, $pass);
