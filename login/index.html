@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Clínica Dental Sonrisas</title>
+    <title>Clínica Dental </title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
         * {
@@ -197,23 +197,20 @@
 <body>
 
     <div class="container">
-        <!-- Panel Izquierdo - Decorativo -->
+        <!-- Panel Izquierdo  -->
         <div class="left-panel">
             <div class="tooth-icon">
                 <i class="fas fa-tooth"></i>
             </div>
-            <h1>Clínica Dental Sonrisas</h1>
-            <p>Cuidamos tu sonrisa con amor y profesionalismo. Ingresa para acceder a tu panel.</p>
+            <h1>Clínica Dental </h1>
         </div>
 
         <!-- Panel Derecho - Login -->
         <div class="right-panel">
             <div class="tabs">
                 <div class="tab active" data-tab="login">Iniciar Sesión</div>
-                <!-- Quitamos registro por ahora, solo login -->
             </div>
 
-            <!-- Formulario de Login -->
             <div class="form-container active" id="login-form">
                 <h2>Bienvenido de nuevo</h2>
                 <div id="alert-container"></div>
@@ -253,7 +250,6 @@
             const role = document.getElementById('role').value;
             const alertContainer = document.getElementById('alert-container');
 
-            // Limpiar alertas anteriores
             alertContainer.innerHTML = '';
 
             try {
@@ -268,10 +264,9 @@
                 const result = await response.json();
 
                 if (result.success) {
-                    // Mostrar mensaje de éxito
                     alertContainer.innerHTML = `<div class="alert alert-success">${result.message}</div>`;
                     
-                    // Redirigir según el rol (puedes cambiar las URLs)
+                    // Redirigir según el rol 
                     setTimeout(() => {
                         switch(result.user.rol) {
                             case 'administrador':
